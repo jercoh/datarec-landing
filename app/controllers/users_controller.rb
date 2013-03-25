@@ -10,7 +10,7 @@ require 'csv'
   	if @user.save
   		flash[:success] = "POST save message"
   		redirect_to '/success'
-  		UserMailer.registration_confirmation(@user).deliver
+  		#UserMailer.registration_confirmation(@user).deliver
   	else 
   		render 'new'
   	end
