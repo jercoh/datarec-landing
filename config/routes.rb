@@ -1,5 +1,5 @@
 LaunchpageRails::Application.routes.draw do
-  get "static/home"
+  #get "static/home"
 
 	resources :users
 	
