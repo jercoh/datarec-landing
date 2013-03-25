@@ -8,9 +8,9 @@
 					<button>Submit</button>
 				</form> -->
 				<%= form_for @user do |f| %>
-				<%= render 'shared/error_messages', object: f.object %>
+				<%#= render 'shared/error_messages', object: f.object %>
 				<%= f.text_field :email, :placeholder => "Join our mailing list" %>
-				<%= f.submit "Submit", class: "btn" %>
+				<button>Submit</button>
 			<% end %>
 			</div>
 		</div>
