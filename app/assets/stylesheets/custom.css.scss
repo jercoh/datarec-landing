@@ -256,7 +256,7 @@ body {
   font-weight: normal;
 }
 
-.jumbotron .newsletter .input {
+.jumbotron .newsletter input {
   -webkit-box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4), 0px 0px 1px rgba(0, 0, 0, 0.3) inset;
   -moz-box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4), 0px 0px 1px rgba(0, 0, 0, 0.3) inset;
   box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4), 0px 0px 1px rgba(0, 0, 0, 0.3) inset;
@@ -272,17 +272,17 @@ body {
   background: url("/images/newsletter-ico-white.png") no-repeat;
   margin: 0px;
   top: 6px;
-  right: 40px;
+  right: 10px;
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.jumbotron .newsletter .btn:hover, .jumbotron .newsletter .btn:active {
+.jumbotron .newsletter button:hover, .jumbotron .newsletter button:active {
   background: url("/images/newsletter-ico-white.png") no-repeat;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.jumbotron .newsletter.btn:after {
+.jumbotron .newsletter button:after {
   display: none;
 }
 
@@ -690,7 +690,7 @@ body {
   margin-left: 14px;
 }
 
-.newsletter .input {
+.newsletter input {
   position: relative;
   background: white url("/images/newsletter-ico.png") no-repeat 15px 14px;
   border-top: 1px solid #b0b0b0;
