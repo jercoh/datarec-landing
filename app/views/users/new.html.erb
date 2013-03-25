@@ -2,6 +2,7 @@
 		<div class="row">
 			<h1><img src="images/pockizx2.png" alt="Pockiz" width="123" height="33" /></h1>
 			<h2>A social marketplace for <strong>teens</strong> to curate, buy &amp; share products.</h2>
+			<h3>Get notified when you can use Pockiz</h3>
 			<div class="newsletter">
 <!-- 				<form action="#" method="post">
 					<input type="email" name="email" id="email" placeholder="Join our mailing list">
@@ -9,7 +10,7 @@
 				</form> -->
 				<%= form_for @user do |f| %>
 				<%#= render 'shared/error_messages', object: f.object %>
-				<%= f.text_field :email, :placeholder => "Join our mailing list" %>
+				<%= f.text_field :email, :placeholder => "What's your email address?" %>
 				<button>Submit</button>
 			<% end %>
 			</div>
