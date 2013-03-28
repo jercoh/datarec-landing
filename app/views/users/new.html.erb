@@ -1,145 +1,174 @@
-	<div class="jumbotron">
-		<div class="row">
-			<h1><img src="images/pockizx2.png" alt="Pockiz" width="123" height="33" /></h1>
-			<h2>A social marketplace for <strong>teens</strong> to curate, buy &amp; share products.</h2>
-			<h3>Get notified when you can use Pockiz</h3>
-			<div class="newsletter">
-<!-- 				<form action="#" method="post">
-					<input type="email" name="email" id="email" placeholder="Join our mailing list">
-					<button>Submit</button>
-				</form> -->
-				<%= form_for @user do |f| %>
+<div class="jumbotron">
+	<div class="row">
+		<h1><img src="images/pockiz.x2.png" alt="Pockiz" width="123" height="33" /></h1>
+		<h2>A social marketplace for <strong>teens</strong> to curate, buy &amp; share products.</h2>
+		<div class="buttons hidden">
+			<!-- remove class hidden to show buttons -->
+			<a href="#" class="signup btn btn-green">SIGN UP</a>
+			<a href="#" class="signin btn btn-transparent">SIGN IN TO ACCOUNT</a>
+		</div>
+		<div class="newsletter"> 
+			<!-- add class hidden to hide newsletter signup -->
+			<!-- add class error to show error message -->
+			<%= form_for @user do |f| %>
 				<%#= render 'shared/error_messages', object: f.object %>
 				<%= f.text_field :email, :placeholder => "What's your email address?" %>
 				<button>Submit</button>
 			<% end %>
-			</div>
 		</div>
 	</div>
-	<div class="mac-display"></div>
-	<div class="marketing">
-		<div class="discover">
-			<h3>Discover</h3>
-			<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
-		</div>
-		<div class="share">
-			<h3>Share</h3>
-			<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
-		</div>
-		<div class="buy">
-			<h3>Buy</h3>
-			<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
+</div>
+<div class="mac-display"></div>
+<div class="marketing">
+	<div class="discover">
+		<h3>Discover</h3>
+		<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
+	</div>
+	<div class="share">
+		<h3>Share</h3>
+		<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
+	</div>
+	<div class="buy">
+		<h3>Buy</h3>
+		<p>Curabitur blandit tempus porttitor. Maecen as faucibus mollis interdum. Vestibulum ligula porta felis euismod semper.</p>
+	</div>
+</div>
+<div class="landing-products">
+	<div class="products-label">Products <span>on</span> Pockiz</div>
+	<div class="products-container">
+		<ul>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
+			<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
+		</ul>
+	</div>
+</div>
+<div class="footer">
+	<div class="row social">
+		<a href="#" class="btn btn-facebook">Like us on Facebook</a>
+		<a href="#" class="btn btn-twitter">Follow us on Twitter</a>
+		<a href="#" class="btn btn-pinterest">Follow us on Pinterest</a>
+		<div class="newsletter">
+			<form action="#" method="post">
+				<input type="email" name="email" id="email2" placeholder="Enter your email address">
+				<button>Submit</button>
+			</form>
 		</div>
 	</div>
-	<div class="landing-products">
-		<div class="products-label">Products <span>on</span> Pockiz</div>
-		<div class="products-container">
-			<ul>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/6.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/7.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/1.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/2.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/3.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/4.jpg" alt=""></a></li>
-				<li><a href="#"><img src="images/products/5.jpg" alt=""></a></li>
-			</ul>
+	<div class="row">
+		<ul>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Team</a></li>
+			<li><a href="#">Press</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+		<p class="copyright">Copyright © 2013 Pockiz, Inc. All screenshots © their respective owners.<br />Handcrafted by <a href="#">Enthusiastik</a>.</p>
+	</div>
+</div>
+<div id="overlay"></div>
+<div id="modal" class="sign-in">
+	<div class="header">
+		<h2>Sign In to <img src="images/pockiz-black-20.x2.png" alt="Pockiz" width="44" height="12" /></h2>
+		<a href="#" class="close"><img src="images/btn-x.png" alt="Close" /></a>
+	</div>
+	<a href="#" class="btn facebook facebook-sign-up"><span>Sign in using your Facebook</span></a>
+	<p>Don't have an account yet? <a href="#"><strong>Sign up here.</strong></a></p>
+	<div class="or"><span>or</span></div>
+	<footer>
+		<div class="step0">
+			<form action="#" class="signup-form">
+				<div class="input">
+					<input type="text" placeholder="Username" />
+				</div>
+				<div class="input">
+					<input type="password" placeholder="Password" />
+				</div>
+				<div class="submit">
+					<input type="submit" value="Sign In" />
+				</div>
+			</form>
+			<a href="#step1">Lost your Password? Retrieve it here.</a>
+		</div>
+		<div class="step1">
+			<a href="#step0" class="back"><img src="images/arrow-left.png" alt="Back" /></a>
+			<form action="#" class="reset-password">
+				<div class="input input-large">
+					<input type="email" placeholder="Enter email address" />
+				</div>
+				<div class="submit submit-large">
+					<input type="submit" value="Reset Password" />
+				</div>
+			</form>
+			<a href="#step0">I know my Password. Let me Sign In</a>
+		</div>
+		<div class="step2">
+			<img src="images/icon-cirle-check-green.png" alt="All done" />
+			<strong>We sent you an email to confirm your password reset.</strong>
+		</div>
+	</footer>
+</div>
+<div id="modal2" class="thank-you">
+	<div class="header">
+		<h2>Thank you for signing up to Pockiz</h2>
+		<p>Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiamporta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+		<a href="#" class="close"><img src="images/btn-x.png" alt="Close" /></a>
+	</div>
+	<div class="share-section">
+		<a href="#" class="facebook">
+			Share on Facebook
+		</a>
+		<a href="#" class="twitter">
+			Share on Twitter
+		</a>
+		<a href="#" class="pinterest">
+			Share on Pinterest
+		</a>
+	</div>
+	<div class="content">
+		<h3>Want Priority Access?</h3>
+		<p>Get early access by inviting at least 3 friends. The more friends that you invite, the earlier you get access.</p>
+		<div class="copy-code">
+			<p>Copy the link below and share it with your friends.</p>
+			<div class="input"><input type="text" value="http://pk.is/56yHH79gaZa" /></div>
+			<div class="submit"><input type="button" value="Copy" /></div>
 		</div>
 	</div>
-	<div class="footer">
-		<div class="row social">
-			<a href="#" class="btn btn-facebook">Like us on Facebook</a>
-			<a href="#" class="btn btn-twitter">Follow us on Twitter</a>
-			<a href="#" class="btn btn-pinterest">Follow us on Pinterest</a>
-			<div class="newsletter">
-				<form action="#" method="post">
-					<input type="email" name="email" id="email2" placeholder="Enter your email address">
-					<button>Submit</button>
-				</form>
-			</div>
-		</div>
-		<div class="row">
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Team</a></li>
-				<li><a href="#">Press</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Help</a></li>
-			</ul>
-			<p class="copyright">Copyright © 2013 Pockiz, Inc. All screenshots © their respective owners.<br />Handcrafted by <a href="#">Enthusiastik</a>.</p>
-		</div>
-	</div>
-	<div id="overlay"></div>
-	<div id="modal" class="sign-in">
-		<div class="header">
-			<h2>Sign In to <img src="images/pockiz-black-20x2.png" alt="Pockiz" width="44" height="12" /></h2>
-			<a href="#" class="close"><img src="images/btn-x.png" alt="Close" /></a>
-		</div>
-		<a href="#" class="btn facebook facebook-sign-up"><span>Sign in using your Facebook</span></a>
-		<p>Don't have an account yet? <a href="#"><strong>Sign up here.</strong></a></p>
-		<div class="or"><span>or</span></div>
-		<footer>
-			<div class="step0">
-				<form action="#" class="signup-form">
-					<div class="input">
-						<input type="text" placeholder="Username" />
-					</div>
-					<div class="input">
-						<input type="password" placeholder="Password" />
-					</div>
-					<div class="submit">
-						<input type="submit" value="Sign In" />
-					</div>
-				</form>
-				<a href="#step1">Lost your Password? Retrieve it here.</a>
-			</div>
-			<div class="step1">
-				<a href="#step0" class="back"><img src="images/arrow-left.png" alt="Back" /></a>
-				<form action="#" class="reset-password">
-					<div class="input input-large">
-						<input type="email" placeholder="Enter email address" />
-					</div>
-					<div class="submit submit-large">
-						<input type="submit" value="Reset Password" />
-					</div>
-				</form>
-				<a href="#step0">I know my Password. Let me Sign In</a>
-			</div>
-			<div class="step2">
-				<img src="images/icon-cirle-check-green.png" alt="All done" />
-				<strong>We sent you an email to confirm your password reset.</strong>
-			</div>
-		</footer>
-	</div>
+</div>

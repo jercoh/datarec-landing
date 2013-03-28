@@ -54,7 +54,33 @@ $(function(){
 	if(modal.length){
 		
 		/*** THIS TEMPORARY SNIPPET BINDS MODAL TO CLICKING THE POCKIZ LOGO ***/
+		var demo = 0;
 		$('.jumbotron h1').on('click', function(e){
+			e.preventDefault();
+			switch(demo){
+				case 0:
+					$('.jumbotron .buttons').addClass('hidden');
+					$('.jumbotron .newsletter').addClass('error');
+					break;
+				case 1:
+					$('.jumbotron .buttons').removeClass('hidden');
+					$('.jumbotron .newsletter').removeClass('error').addClass('hidden');
+					break;
+				case 2:
+					$('.jumbotron .buttons').addClass('hidden');
+					$('.jumbotron .newsletter').removeClass('error hidden');
+					break;
+			}
+			demo = (demo+1)%3;
+		});
+		
+		$('.jumbotron .newsletter form').on('submit', function(e){
+			e.preventDefault();
+			customFade($('#overlay, #modal2'), 1);
+		});
+		/*** END OF TEMPORARY SNIPPET ***/
+		
+		$('.jumbotron .buttons .signin').on('click', function(e){
 			e.preventDefault();
 			customFade(modal.add('#overlay'), 1);
 		});
@@ -62,6 +88,16 @@ $(function(){
 		$('.close', modal).on('click', function(e){
 			e.preventDefault();
 			customFade(modal.add('#overlay'), -1);
+		});
+		
+		$('.close', '#modal2').on('click', function(e){
+			e.preventDefault();
+			customFade($('#overlay, #modal2'), -1);
+		});
+		
+		$('#overlay').on('click', function(e){
+			e.preventDefault();
+			customFade($('#overlay, #modal, #modal2'), -1);
 		});
 		
 		var footer = modal.children('footer');
