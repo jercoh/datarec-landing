@@ -49,10 +49,8 @@ $(function(){
 				what.fadeTo(time, o);
 		};
 	}
-		
-	$('.jumbotron .newsletter button').on('click', function(e){
-		// e.preventDefault();
-		// customFade($('#overlay, #modal2'), 1);
+
+	function emailFormSubmitting(){
 		$.ajax("/users", {
 		    type: "POST",
 		    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -75,8 +73,18 @@ $(function(){
 		    		$('.error-msg').text("Oops! It seems you mistyped your email address.");
 		    	$('.jumbotron .newsletter').addClass("error");
     		}	
-  		});	
+  		});
+	}
+		
+	$('.jumbotron .newsletter button').on('click', function(e){
+		emailFormSubmitting();			
 	});		
+
+	$('.jumbotron .newsletter #email').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            emailFormSubmitting();//Trigger search button click event
+        }
+    });
 	
 	$('.close', '#modal2').on('click', function(e){
 		e.preventDefault();
