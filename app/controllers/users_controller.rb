@@ -13,7 +13,7 @@ require 'csv'
           format.js { render( :json => ["OK"] ) }
         else 
           format.html
-          format.json {render( :json => @user.errors, :status => 400)}
+          format.json {render( :json => @user.errors.full_messages, :status => 400)}
         end
       end
   		#UserMailer.registration_confirmation(@user).deliver

@@ -62,11 +62,17 @@ $(function(){
 		    },
 		    cache: false,
 		    success: function(data, textStatus) {
+		      $('.jumbotron .newsletter').removeClass("error");
 		      $('.jumbotron .newsletter #email').val('');
 		      customFade($('#overlay, #modal2'), 1);
 		    },
-		    error: function (result) {
-		    	$('.jumbotron .newsletter .error-msg').text(result.email);
+		    error: function (xhr, ajaxOptions, thrownError) {
+		    	if($('.jumbotron .newsletter #email').val() == '')
+		    		$('.error-msg').text("Oops! It seems the email field is empty.");
+		    	else if(xhr.responseText == "[\"Email has already been taken\"]")
+		    		$('.error-msg').text("You're already registred. We won't forget you!");
+		    	else
+		    		$('.error-msg').text("Oops! It seems you mistyped your email address.");
 		    	$('.jumbotron .newsletter').addClass("error");
     		}	
   		});	
