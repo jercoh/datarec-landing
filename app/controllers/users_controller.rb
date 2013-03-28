@@ -1,18 +1,24 @@
 class UsersController < ApplicationController
 require 'csv'
+skip_before_filter  :verify_authenticity_token
 
   def new
   	@user = User.new
   end
   
   def create 
-  	@user = User.new(params[:user])
+  	@user = User.new(:email => params[:email])
   	if @user.save
-  		flash[:success] = "POST save message"
-  		redirect_to '/success'
+  		respond_to do |format|
+        format.html {redirect_to :action => 'new'}
+        format.js { render( :json => ["OK"] ) }
+      end
   		#UserMailer.registration_confirmation(@user).deliver
   	else 
-  		render 'new'
+  		respond_to do |format|
+        format.html
+        format.js {render( :json => @user.errors, :status => 400)}
+      end
   	end
   end
   

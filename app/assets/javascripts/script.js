@@ -49,122 +49,36 @@ $(function(){
 				what.fadeTo(time, o);
 		};
 	}
+		
+	$('.jumbotron .newsletter form').on('submit', function(e){
+		// e.preventDefault();
+		// customFade($('#overlay, #modal2'), 1);
+		$.ajax({
+		    type: "POST",
+		    url: "/users/new",
+		    dataType: 'json',
+		    data: {
+		      email: $("#email").val()
+		    },
+		    success: function(data, textStatus) {
+		      customFade($('#overlay, #modal2'), 1);
+		    },
+		    error: function (result) {
+        		alert(result.responseText);
+    		}	
+  		});	
+	});		
 	
-	var modal = $('#modal.sign-in');
-	if(modal.length){
-		
-		/*** THIS TEMPORARY SNIPPET BINDS MODAL TO CLICKING THE POCKIZ LOGO ***/
-		var demo = 0;
-		$('.jumbotron h1').on('click', function(e){
-			e.preventDefault();
-			switch(demo){
-				case 0:
-					$('.jumbotron .buttons').addClass('hidden');
-					$('.jumbotron .newsletter').addClass('error');
-					break;
-				case 1:
-					$('.jumbotron .buttons').removeClass('hidden');
-					$('.jumbotron .newsletter').removeClass('error').addClass('hidden');
-					break;
-				case 2:
-					$('.jumbotron .buttons').addClass('hidden');
-					$('.jumbotron .newsletter').removeClass('error hidden');
-					break;
-			}
-			demo = (demo+1)%3;
-		});
-		
-		$('.jumbotron .newsletter form').on('submit', function(e){
-			e.preventDefault();
-			customFade($('#overlay, #modal2'), 1);
-		});
-		/*** END OF TEMPORARY SNIPPET ***/
-		
-		$('.jumbotron .buttons .signin').on('click', function(e){
-			e.preventDefault();
-			customFade(modal.add('#overlay'), 1);
-		});
-		
-		$('.close', modal).on('click', function(e){
-			e.preventDefault();
-			customFade(modal.add('#overlay'), -1);
-		});
-		
-		$('.close', '#modal2').on('click', function(e){
-			e.preventDefault();
-			customFade($('#overlay, #modal2'), -1);
-		});
-		
-		$('#overlay').on('click', function(e){
-			e.preventDefault();
-			customFade($('#overlay, #modal, #modal2'), -1);
-		});
-		
-		var footer = modal.children('footer');
-		var steps = $('.step0, .step1, .step2', footer);
-		
-		$('a[href^=#]', footer).click(function(e){
-			e.preventDefault();
-			customAnimate(footer, {
-				marginLeft: parseInt(footer.css('marginLeft')) - steps.filter($(this).attr('href').replace('#', '.')).position().left
-			});
-		});
-		
-		$('form.reset-password', footer).on('submit', function(e){
-			e.preventDefault();
-			customAnimate(footer, {
-				marginLeft: parseInt(footer.css('marginLeft')) - steps.filter('.step2').position().left
-			});
-			setTimeout(function(){
-				customAnimate(footer, {
-					marginLeft: 0
-				});
-			}, 5500);
-		});
-	}
+	$('.close', '#modal2').on('click', function(e){
+		e.preventDefault();
+		customFade($('#overlay, #modal2'), -1);
+	});
 	
-	var box = $('#box.sign-in');
-	if($('body').hasClass('out-of-modal') && box.length){
-		var footer = box.children('.footer').addClass('step0');
-		var steps = $('.step0, .step1, .step2', footer);
-		var timer = null;
-		
-		footerHeights = {
-			0: 45, 
-			1: 150, 
-			2: 110
-		};
-		
-		var footerStep = function(s){
-			footer.removeClass('step0 step1 step2').addClass('step'+s);
-			customAnimate(footer, {height: footerHeights[s]});
-			customFade(steps.not('.step'+s), -1, 250)
-			setTimeout(function(){
-				customFade(steps.filter('.step'+s), 1, 250)
-			}, 250);
-		};
-		
-		$('a[href="#step1"]', footer).on('click', function(e){
-			e.preventDefault();
-			if(footer.hasClass('step0')){
-				footerStep(1);
-			}
-		});
-		
-		$('a.close', footer).on('click', function(e){
-			e.preventDefault();
-			footerStep(0);
-			if(timer) clearTimeout(timer);
-		});
-		
-		$('form.reset-password', footer).on('submit', function(e){
-			e.preventDefault();
-			footerStep(2);
-			timer = setTimeout(function(){
-				footerStep(0);
-			}, 5500);
-		});
-	}
+	$('#overlay').on('click', function(e){
+		e.preventDefault();
+		customFade($('#overlay, #modal2'), -1);
+	});
+	
 });
 
 

@@ -10,12 +10,11 @@
 		<div class="newsletter"> 
 			<!-- add class hidden to hide newsletter signup -->
 			<!-- add class error to show error message -->
-			<%= form_for @user do |f| %>
-				<%#= render 'shared/error_messages', object: f.object %>
-				<%= f.text_field :email, :placeholder => "What's your email address?", :id => "email" %>
-				<button>Submit</button>
-				<div class="error-msg">Invalid Email Address</div>
-			<% end %>
+			<form action="/users" method="post">
+					<input type="email" name="email" id="email" placeholder="Join our mailing list">
+					<button>Submit</button>
+					<div class="error-msg">Invalid Email Address</div>
+			</form>		
 		</div>
 	</div>
 </div>
@@ -105,47 +104,6 @@
 	</div>
 </div>
 <div id="overlay"></div>
-<div id="modal" class="sign-in">
-	<div class="header">
-		<h2>Sign In to <img src="images/pockiz-black-20.x2.png" alt="Pockiz" width="44" height="12" /></h2>
-		<a href="#" class="close"><img src="images/btn-x.png" alt="Close" /></a>
-	</div>
-	<a href="#" class="btn facebook facebook-sign-up"><span>Sign in using your Facebook</span></a>
-	<p>Don't have an account yet? <a href="#"><strong>Sign up here.</strong></a></p>
-	<div class="or"><span>or</span></div>
-	<footer>
-		<div class="step0">
-			<form action="#" class="signup-form">
-				<div class="input">
-					<input type="text" placeholder="Username" />
-				</div>
-				<div class="input">
-					<input type="password" placeholder="Password" />
-				</div>
-				<div class="submit">
-					<input type="submit" value="Sign In" />
-				</div>
-			</form>
-			<a href="#step1">Lost your Password? Retrieve it here.</a>
-		</div>
-		<div class="step1">
-			<a href="#step0" class="back"><img src="images/arrow-left.png" alt="Back" /></a>
-			<form action="#" class="reset-password">
-				<div class="input input-large">
-					<input type="email" placeholder="Enter email address" />
-				</div>
-				<div class="submit submit-large">
-					<input type="submit" value="Reset Password" />
-				</div>
-			</form>
-			<a href="#step0">I know my Password. Let me Sign In</a>
-		</div>
-		<div class="step2">
-			<img src="images/icon-cirle-check-green.png" alt="All done" />
-			<strong>We sent you an email to confirm your password reset.</strong>
-		</div>
-	</footer>
-</div>
 <div id="modal2" class="thank-you">
 	<div class="header">
 		<h2>Thank you for signing up to Pockiz</h2>
