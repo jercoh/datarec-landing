@@ -12,8 +12,9 @@
 			<!-- add class error to show error message -->
 			<%= form_for @user do |f| %>
 				<%#= render 'shared/error_messages', object: f.object %>
-				<%= f.text_field :email, :placeholder => "What's your email address?" %>
+				<%= f.text_field :email, :placeholder => "What's your email address?", :id => "email" %>
 				<button>Submit</button>
+				<div class="error-msg">Invalid Email Address</div>
 			<% end %>
 		</div>
 	</div>
