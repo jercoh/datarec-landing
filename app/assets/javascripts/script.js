@@ -63,6 +63,7 @@ $(function(){
 		      $('.jumbotron .newsletter').removeClass("error");
 		      $('.jumbotron .newsletter #email').val('');
 		      customFade($('#overlay, #modal2'), 1);
+			  mixpanel.track("User Created");
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
 		    	if($('.jumbotron .newsletter #email').val() == '')
@@ -72,6 +73,7 @@ $(function(){
 		    	else
 		    		$('.error-msg').text("Oops! It seems you mistyped your email address.");
 		    	$('.jumbotron .newsletter').addClass("error");
+				mixpanel.track("Error In Email");
     		}	
   		});
 	}
