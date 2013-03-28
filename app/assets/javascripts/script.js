@@ -66,6 +66,7 @@ $(function(){
 			  mixpanel.track("User Created");
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
+		    	customFade($('#overlay, #modal2'), 1);
 		    	if($('.jumbotron .newsletter #email').val() == '')
 		    		$('.error-msg').text("Oops! It seems the email field is empty.");
 		    	else if(xhr.responseText == "[\"Email has already been taken\"]")
