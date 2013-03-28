@@ -50,21 +50,24 @@ $(function(){
 		};
 	}
 		
-	$('.jumbotron .newsletter form').on('submit', function(e){
+	$('.jumbotron .newsletter button').on('click', function(e){
 		// e.preventDefault();
 		// customFade($('#overlay, #modal2'), 1);
-		$.ajax({
+		$.ajax("/users", {
 		    type: "POST",
-		    url: "/users/new",
+		    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 		    dataType: 'json',
 		    data: {
 		      email: $("#email").val()
 		    },
+		    cache: false,
 		    success: function(data, textStatus) {
+		      $('.jumbotron .newsletter #email').val('');
 		      customFade($('#overlay, #modal2'), 1);
 		    },
 		    error: function (result) {
-        		alert(result.responseText);
+		    	$('.jumbotron .newsletter .error-msg').text(result.email);
+		    	$('.jumbotron .newsletter').addClass("error");
     		}	
   		});	
 	});		

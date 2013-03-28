@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 require 'csv'
-skip_before_filter  :verify_authenticity_token
 
   def new
   	@user = User.new
@@ -8,18 +7,16 @@ skip_before_filter  :verify_authenticity_token
   
   def create 
   	@user = User.new(:email => params[:email])
-  	if @user.save
   		respond_to do |format|
-        format.html {redirect_to :action => 'new'}
-        format.js { render( :json => ["OK"] ) }
+        if @user.save
+          format.html {redirect_to :action => 'new'}
+          format.js { render( :json => ["OK"] ) }
+        else 
+          format.html
+          format.json {render( :json => @user.errors, :status => 400)}
+        end
       end
   		#UserMailer.registration_confirmation(@user).deliver
-  	else 
-  		respond_to do |format|
-        format.html
-        format.js {render( :json => @user.errors, :status => 400)}
-      end
-  	end
   end
   
   def index 
