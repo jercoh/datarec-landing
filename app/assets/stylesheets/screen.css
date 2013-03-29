@@ -1734,12 +1734,12 @@ body {
     background-size: 22px 22px;
   }
 }
-.thank-you .share-section > .pinterest {
-  background: url("/images/ico-pinterest-round.png") no-repeat center 41px;
+.thank-you .share-section > .googleplus {
+  background: url("/images/ico-googleplus-round.png") no-repeat center 41px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .thank-you .share-section > .pinterest {
-    background-image: url("/images/ico-pinterest-round.x2.png");
+  .thank-you .share-section > .googleplus {
+    background-image: url("/images/ico-googleplus-round.x2.png");
     background-size: 22px 22px;
   }
 }
