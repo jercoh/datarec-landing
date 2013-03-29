@@ -1662,12 +1662,20 @@ body {
   padding-bottom: 14px;
 }
 .thank-you .header h2 {
-  padding: 33px 105px 18px;
+  padding: 33px 30px 18px;
   margin: 0;
   font-family: ProximaNovaBold, Arial, sans-serif;
   font-weight: normal;
   font-size: 38px;
   line-height: 44px;
+  color: #363636;
+}
+.thank-you .header h3{
+  padding: 20px 0 6px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
   color: #363636;
 }
 .thank-you .header p {
