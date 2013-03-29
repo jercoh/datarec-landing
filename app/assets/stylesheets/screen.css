@@ -477,9 +477,11 @@ body {
 }
 
 .footer .social {
-  height: 43px;
-  padding-top: 61px;
-  margin-bottom: 115px;
+	position:relative;
+  	height: 43px;
+  	padding-top: 61px;
+  	margin-bottom: 115px;
+	left:10%;
 }
 
 .footer .social .btn {
