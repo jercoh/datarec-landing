@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-require 'csv'
+  require 'csv'
+  include HTTParty
+  
 
   def new
   	@user = User.new
@@ -9,8 +11,10 @@ require 'csv'
   	@user = User.new(:email => params[:email])
   		respond_to do |format|
         if @user.save
+          prefinery = HTTParty.post('https://pockiz.prefinery.com/api/v2/betas/3454/testers.json?api_key=tQ234fvqpqzvRJpxpnps', :query => {:tester => {:email => params[:email]}})
+          share_link = prefinery.parsed_response["share_link"]
           format.html {redirect_to :action => 'new'}
-          format.js { render( :json => ["OK"] ) }
+          format.js { render( :json => ["OK", share_link] ) }
         else 
           format.html
           format.json {render( :json => @user.errors.full_messages, :status => 400)}

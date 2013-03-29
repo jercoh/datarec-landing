@@ -62,10 +62,14 @@ $(function(){
 		    success: function(data, textStatus) {
 		      $('.jumbotron .newsletter').removeClass("error");
 		      $('.jumbotron .newsletter #email').val('');
+		      $('.copy-code input').first().val(data[1]);
+		      $('.share-section .facebook').attr('href','https://www.facebook.com/dialog/feed?app_id=477706475585963&link='+data[1]+'&picture=&name=Pockiz&caption=Join%20me%20on%20Pockiz!&description=Pockiz%20is%20a%20social%20marketplace%20for%20teens%20to%20curate,%20buy%20and%20share%20products.&redirect_uri=http://www.pockiz.com')
+		      $('.share-section .twitter').attr('href','https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flocalhost%3A3000%2Fusers%2F103%2Ffriends&source=tweetbutton&text=Just%20joined%20%40pockiz_us.%20Come%20and%20discover%20cool%20products%20to%20buy%20with%20your%20allowances!%20%20&url='+data[1])
 		      customFade($('#overlay, #modal2'), 1);
 			  mixpanel.track("User Created");
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
+		    	customFade($('#overlay, #modal2'), 1);
 		    	if($('.jumbotron .newsletter #email').val() == '')
 		    		$('.error-msg').text("Oops! It seems the email field is empty.");
 		    	else if(xhr.responseText == "[\"Email has already been taken\"]")
@@ -77,25 +81,6 @@ $(function(){
     		}	
   		});
 	}
-
-	function prefinery(){
-		$.ajax({
-			url: "https://pockiz.prefinery.com/api/v2/betas/3454/testers",
-		    dataType: 'json',
-		    type: "POST",
-		    data: {
-		       api_key: "tQ234fvqpqzvRJpxpnps",
-		       tester: {email: $("#email").val()}
-		    },
-		    cache: false,
-		    success: function(data, textStatus, xhr) {
-		      alert(xhr.responseXML);
-		    },
-		    error: function(data) {
-		      alert(data.responseText);
-		    }
-		});
-	}
 		
 	$('.jumbotron .newsletter button').on('click', function(e){
 		emailFormSubmitting();			
@@ -104,7 +89,7 @@ $(function(){
 	$('.jumbotron .newsletter #email').keypress(function(e){
         if(e.which == 13){//Enter key pressed
             emailFormSubmitting();
-            prefinery();//Trigger search button click event
+            //Trigger search button click event
         }
     });
 	
