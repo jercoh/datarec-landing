@@ -66,7 +66,6 @@ $(function(){
 			  mixpanel.track("User Created");
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		    	customFade($('#overlay, #modal2'), 1);
 		    	if($('.jumbotron .newsletter #email').val() == '')
 		    		$('.error-msg').text("Oops! It seems the email field is empty.");
 		    	else if(xhr.responseText == "[\"Email has already been taken\"]")
@@ -78,6 +77,26 @@ $(function(){
     		}	
   		});
 	}
+
+	function prefinery(){
+		$.ajax("https://pockiz.prefinery.com/api/v2/betas/3454/testers", {
+		    type: "POST",
+		    dataType: 'json',
+		    data: {
+		      email: $("#email").val()
+		    },
+		    headers: {
+                    "X-Parse-REST-API-Key": "tQ234fvqpqzvRJpxpnps"
+            },
+		    cache: false,
+		    success: function(data, textStatus) {
+		      alert(data.responseText);
+		    },
+		    error: function(data) {
+		      alert(data.responseText);
+		    }
+		});
+	}
 		
 	$('.jumbotron .newsletter button').on('click', function(e){
 		emailFormSubmitting();			
@@ -85,7 +104,8 @@ $(function(){
 
 	$('.jumbotron .newsletter #email').keypress(function(e){
         if(e.which == 13){//Enter key pressed
-            emailFormSubmitting();//Trigger search button click event
+            emailFormSubmitting();
+            prefinery();//Trigger search button click event
         }
     });
 	
