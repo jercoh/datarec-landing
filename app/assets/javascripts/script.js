@@ -79,18 +79,17 @@ $(function(){
 	}
 
 	function prefinery(){
-		$.ajax("https://pockiz.prefinery.com/api/v2/betas/3454/testers", {
-		    type: "POST",
+		$.ajax({
+			url: "https://pockiz.prefinery.com/api/v2/betas/3454/testers",
 		    dataType: 'json',
+		    type: "POST",
 		    data: {
-		      email: $("#email").val()
+		       api_key: "tQ234fvqpqzvRJpxpnps",
+		       tester: {email: $("#email").val()}
 		    },
-		    headers: {
-                    "X-Parse-REST-API-Key": "tQ234fvqpqzvRJpxpnps"
-            },
 		    cache: false,
-		    success: function(data, textStatus) {
-		      alert(data.responseText);
+		    success: function(data, textStatus, xhr) {
+		      alert(xhr.responseXML);
 		    },
 		    error: function(data) {
 		      alert(data.responseText);
