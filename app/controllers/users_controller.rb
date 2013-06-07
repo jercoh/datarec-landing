@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   	@user = User.new(:email => params[:email])
   		respond_to do |format|
         if @user.save
-          prefinery = HTTParty.post('https://thebeautyst.prefinery.com/api/v2/betas/3840/testers.json?api_key=srAx88sWMjXSFwWB4rXL', :query => {:tester => {:email => params[:email]}})
-          share_link = prefinery.parsed_response["share_link"]
+          # prefinery = HTTParty.post('https://thebeautyst.prefinery.com/api/v2/betas/3840/testers.json?api_key=srAx88sWMjXSFwWB4rXL', :query => {:tester => {:email => params[:email]}})
+          # share_link = prefinery.parsed_response["share_link"]
           format.html {redirect_to :action => 'new'}
           format.js { render( :json => ["OK", share_link] ) }
         else 
