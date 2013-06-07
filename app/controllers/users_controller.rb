@@ -14,7 +14,7 @@ class UsersController < ApplicationController
           # prefinery = HTTParty.post('https://thebeautyst.prefinery.com/api/v2/betas/3840/testers.json?api_key=srAx88sWMjXSFwWB4rXL', :query => {:tester => {:email => params[:email]}})
           # share_link = prefinery.parsed_response["share_link"]
           format.html {redirect_to :action => 'new'}
-          format.js { render( :json => ["OK", share_link] ) }
+          format.js { render( :json => ["OK"] ) }
         else 
           format.html
           format.json {render( :json => @user.errors.full_messages, :status => 400)}
