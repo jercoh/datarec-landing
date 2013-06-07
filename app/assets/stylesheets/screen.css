@@ -98,9 +98,8 @@ svg:not(:root) {
 }
 
 fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: .35em .625em .75em;
+  border: 0px solid silver;
+
 }
 
 button, input, select, textarea {
