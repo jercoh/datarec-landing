@@ -28,12 +28,16 @@ $(function(){
 	}
 
 	$("input[type='submit']").on('click', function(e){
-		emailFormSubmitting();			
+		if($("#nom").val() == ""){
+			emailFormSubmitting();		
+		}	
 	});		
 
 	$("#email").keypress(function(e){
 	    if(e.which == 13){//Enter key pressed
-	        emailFormSubmitting();
+	    	if($("#nom").val() == ""){
+	        	emailFormSubmitting();
+	        }
 	        //Trigger search button click event
 	    }
 	});
