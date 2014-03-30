@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :usertype
+  attr_accessible :email, :company
   
   before_save { |user| user.email = email.downcase }
   
