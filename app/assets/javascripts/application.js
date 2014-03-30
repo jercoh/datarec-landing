@@ -11,5 +11,4 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require custom
-//= require_self
+//= require_tree
