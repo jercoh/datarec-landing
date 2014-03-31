@@ -77,12 +77,20 @@ body
 	}
 
 /*----- Header Slider----*/
+
 .banner {
   position: relative;
   text-align: center;
   color: #fff;
-  min-height: 700px;
+/*  min-height: 700px;*/
   background:#000;
+}
+
+
+@media (max-width: 768px) {
+	.banner {
+		min-height: 700px;
+	}
 }
 
 .banner .container {
@@ -131,7 +139,13 @@ body
   background-size: cover;
   background-position: center;
   background-attachment:fixed;
-  min-height: 700px;
+/*  min-height: 700px;*/
+}
+
+@media (max-width: 768px) {
+	.banner .carousel-inner > .item  {
+		min-height: 700px;
+	}
 }
 
 .banner .carousel-indicators {
@@ -177,18 +191,18 @@ body
 
 .content h1
 {
-	font-size:60px;
+	font-size:55px;
 	color:#fff;
-	font-weight:900;
+	font-weight:600;
 	margin:0px;
 	text-shadow:1px 2px 2px rgba(0,0,0,.6);
 }
 
 .content h2
 {
-	font-size:40px;
+	font-size:27px;
 	color:#fff;
-	font-weight:900;
+	font-weight:300;
 	margin:0px;
 	text-shadow:1px 2px 2px rgba(0,0,0,.6);
 }
@@ -196,7 +210,7 @@ body
 .btn-orange
 {
 		
-		margin-top:30px;
+		margin-top:50px;
 
 }
 
@@ -329,6 +343,11 @@ body
 {
 	padding-top:80px;
 	padding-bottom:40px;
+}
+
+.feature-styles .feature-title .pricing{
+	padding-top: 20px;
+	padding-bottom: 0;
 }
 
 .feature-container img

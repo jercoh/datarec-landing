@@ -5,13 +5,13 @@
 $(document).ready(function() {
 
 	var viewport_width = window.innerWidth;
-	var viewport_height = window.innerHeight;
+	var viewport_height = window.innerHeight/1.5;
 
 //Banner
 	$('.banner,.carousel .item').height((viewport_height));
 	$(window).resize(function() {
 	  var viewport_width = window.innerWidth;
-	  var viewport_height = window.innerHeight;
+	  var viewport_height = window.innerHeight/1.5;
 		$('.banner,.carousel .item').height((viewport_height));
 	});
 	});
