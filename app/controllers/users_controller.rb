@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def create 
-  	@user = User.new(:email => params[:email])
+  	@user = User.new(:company=> params[:user][:company], :email => params[:user][:email])
   		respond_to do |format|
         if @user.save
           # prefinery = HTTParty.post('https://thebeautyst.prefinery.com/api/v2/betas/3840/testers.json?api_key=srAx88sWMjXSFwWB4rXL', :query => {:tester => {:email => params[:email]}})

@@ -4,40 +4,59 @@ $(function(){
 		    type: "POST",
 		    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 		    dataType: 'json',
-		    data: {
-		      email: $("#email").val()
+		    data: { 
+		      user: {
+		      	company: $("#company").val(),
+		      	email: $("#email").val()
+		      }
 		    },
 		    cache: false,
 		    success: function(data, textStatus) {
-		    	$('.error').text("");
+		    	$('#message').html("");
 		  		$("#email").remove();
 		  		$("input[type='submit']").remove();
-		  		$(".champ").css('width', '800px');
-		  		$(".champ").css('margin-left', '15px');
-		  		$('label').text("MERCI D'AVOIR PARTCIPE! NOUS VOUS CONTACTERONS APRES LE TIRAGE AU SORT!")
+				var response = "<div class='success'><div class='text-msg'>Thanks! You will hear from us soon.</div></div>";
+				$('#message').html(response);
+				$( "#message" ).show(1000);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		    	if($('#email').val() == '')
-		    		$('.error').text("Le champ email est vide. Veuillez entrer une adresse email.");
-		    	else if(xhr.responseText == "[\"Email has already been taken\"]")
-		    		$('.error').text("Vous avez déjà participé. Merci!");
-		    	else
-		    		$('.error').text("L'adresse email tapée est invalide. Veuillez entrer une adresse valide.");
+		    	if(xhr.responseText == "[\"Email has already been taken\"]"){
+		    		var response = "<div class='error-msg'>Email has already been taken.</div>";
+					$('#message').html(response);
+					$( "#message" ).show(1000);
+				}
+		    	else{
+		    		var response = "<div class='error-msg'>Invalid Email, please provide a correct email.</div>";
+					$('#message').html(response);
+					$( "#message" ).show(1000);
+				}
 			}	
 			});
 	}
 
 	$("input[type='submit']").on('click', function(e){
-		if($("#nom").val() == ""){
-			emailFormSubmitting();		
+		e.preventDefault();
+		if($("#email").val() == ""){
+			var response = "<div class='error-msg'>Please provide an email address.</div>";
+			$('#message').html(response);
+			$( "#message" ).show(1000);
+		}
+		else{
+			emailFormSubmitting();
 		}	
 	});		
 
 	$("#email").keypress(function(e){
+		e.preventDefault();
 	    if(e.which == 13){//Enter key pressed
-	    	if($("#nom").val() == ""){
-	        	emailFormSubmitting();
-	        }
+			if($("#email").val() == ""){
+				var response = "<div class='error-msg'>Please provide an email address.</div>";
+				$('#message').html(response);
+				$( "#message" ).show(1000);
+			}
+			else{
+				emailFormSubmitting();
+			}	
 	        //Trigger search button click event
 	    }
 	});
