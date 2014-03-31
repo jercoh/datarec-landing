@@ -8,11 +8,11 @@ $(document).ready(function() {
 	var viewport_height = window.innerHeight;
 
 //Banner
-	$('.carousel,.item').height((viewport_height));
+	$('.banner,.carousel .item').height((viewport_height));
 	$(window).resize(function() {
 	  var viewport_width = window.innerWidth;
 	  var viewport_height = window.innerHeight;
-		$('.carousel,.item').height((viewport_height));
+		$('.banner,.carousel .item').height((viewport_height));
 	});
 	});
 	
