@@ -13,15 +13,15 @@ $(function(){
 		    cache: false,
 		    success: function(data, textStatus) {
 		    	$('#message').html("");
-		  		$("#email").remove();
-		  		$("input[type='submit']").remove();
+		    	$("#company").val("");
+		  		$("#email").val("");
 				var response = "<div class='success'><div class='text-msg'>Thanks! You will hear from us soon.</div></div>";
 				$('#message').html(response);
 				$( "#message" ).show(1000);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
 		    	if(xhr.responseText == "[\"Email has already been taken\"]"){
-		    		var response = "<div class='error-msg'>Email has already been taken.</div>";
+		    		var response = "<div class='error-msg'>This email has already been taken.</div>";
 					$('#message').html(response);
 					$( "#message" ).show(1000);
 				}
@@ -42,12 +42,13 @@ $(function(){
 			$( "#message" ).show(1000);
 		}
 		else{
-			emailFormSubmitting();
+			if($(".username input").val() == ""){
+				emailFormSubmitting();
+			}
 		}	
 	});		
 
 	$("#email").keypress(function(e){
-		e.preventDefault();
 	    if(e.which == 13){//Enter key pressed
 			if($("#email").val() == ""){
 				var response = "<div class='error-msg'>Please provide an email address.</div>";
@@ -55,7 +56,9 @@ $(function(){
 				$( "#message" ).show(1000);
 			}
 			else{
-				emailFormSubmitting();
+				if($(".username input").val() == ""){
+					emailFormSubmitting();
+				}
 			}	
 	        //Trigger search button click event
 	    }

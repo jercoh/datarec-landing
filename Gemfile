@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg', '0.13.2'
+gem 'pg'
 gem 'httparty'
 group :development, :test do 
 	gem 'rspec-rails', '2.9.0'
